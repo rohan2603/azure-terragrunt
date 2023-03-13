@@ -30,6 +30,13 @@ jobs:
       - name: Setup terragrunt
         uses: eLco/setup-terragrunt@v1
 
-      - name: test
-        run: terragrunt
+      - name: Running Terragrunt Init 
+        run: |
+          cd terragrunt/environments/dev/rg
+          terragrunt init
+
+      - name: Running Terragrunt Plan
+        run: |
+          cd terragrunt/environments/dev/rg
+          terragrunt plan
 
