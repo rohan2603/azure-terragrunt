@@ -30,6 +30,9 @@ jobs:
       - name: Setup terragrunt
         uses: eLco/setup-terragrunt@v1
 
+      - name: Install az cli
+        uses: elstudio/action-install-azure-cli@v1
+        
       - uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
