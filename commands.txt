@@ -1,0 +1,12 @@
+--- > install azure cli 
+
+brew update && brew install azure-cli
+sudo curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash 
+
+----> 
+
+az login steps 
+
+
+----> terraform installation
+
