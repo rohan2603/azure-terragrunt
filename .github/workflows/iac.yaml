@@ -1,4 +1,4 @@
-name: EC2 Instance 
+name: azure terragrunt 
 
 on:
   workflow_dispatch:
