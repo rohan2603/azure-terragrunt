@@ -1,0 +1,35 @@
+name: EC2 Instance 
+
+on:
+  workflow_dispatch:
+    inputs:
+
+      type_of_usecase:
+        type: choice
+        description: use case type
+        options:
+          - Select Use Case
+          - Single Module RG
+          - Single Use Case VM
+          - All Modules
+        required: true
+
+jobs:
+  single_rg:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.type_of_usecase == 'Single Module RG' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_wrapper: false
+
+      - name: Setup terragrunt
+        uses: eLco/setup-terragrunt@v1
+
+      - name: test
+        run: terragrunt
+
