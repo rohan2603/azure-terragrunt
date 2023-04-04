@@ -39,16 +39,24 @@ jobs:
           sudo apt-get update
           sudo apt-get install azure-cli
 
-      - uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      # - uses: azure/login@v1
+      #   with:
+      #     creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Exporting values
-        run: |
-          export ARM_CLIENT_ID="1109fc98-fb80-434b-8fa5-c4b2c1049ba1"
-          export ARM_CLIENT_SECRET="kDb8Q~vIWX53EtjVht4cNipXzGwiU2e6yd5tObPi"
-          export ARM_SUBSCRIPTION_ID="dcdfe38c-2ad1-4c84-b066-5ed998685a77"
-          export ARM_TENANT_ID="24123eba-1d19-4703-9b6e-3522ec27979d"
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: "liX8Q~lvx9vfYVjzdq4uzX9L5h3Md2HUMuEvpbPF"
+          tenant: "24123eba-1d19-4703-9b6e-3522ec27979d"
+          set-sp-credentials: true
+          subscription-id: "dcdfe38c-2ad1-4c84-b066-5ed998685a77"
+
+      # - name: Exporting values
+      #   run: |
+      #     export ARM_CLIENT_ID="1109fc98-fb80-434b-8fa5-c4b2c1049ba1"
+      #     export ARM_CLIENT_SECRET="kDb8Q~vIWX53EtjVht4cNipXzGwiU2e6yd5tObPi"
+      #     export ARM_SUBSCRIPTION_ID="dcdfe38c-2ad1-4c84-b066-5ed998685a77"
+      #     export ARM_TENANT_ID="24123eba-1d19-4703-9b6e-3522ec27979d"
 
       - name: Running Terragrunt Init 
         run: |
