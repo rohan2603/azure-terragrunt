@@ -47,8 +47,8 @@ jobs:
         uses: azure/login@v1
         with:
           creds: "liX8Q~lvx9vfYVjzdq4uzX9L5h3Md2HUMuEvpbPF"
-          tenant: "24123eba-1d19-4703-9b6e-3522ec27979d"
-          set-sp-credentials: true
+          client-id: "4f80ad93-fe3c-4e4d-8814-9b48f68f7994"
+          tenant-id: "24123eba-1d19-4703-9b6e-3522ec27979d"
           subscription-id: "dcdfe38c-2ad1-4c84-b066-5ed998685a77"
 
       # - name: Exporting values
