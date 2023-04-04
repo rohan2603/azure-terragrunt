@@ -3,7 +3,7 @@ include {
 }
 
 terraform {
-  source = "../../../../terraform_modules/rg"
+  source = "../../../../terraform_modules//rg"
 }
 
 inputs = {
